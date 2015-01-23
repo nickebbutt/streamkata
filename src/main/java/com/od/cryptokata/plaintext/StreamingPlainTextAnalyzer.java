@@ -6,13 +6,11 @@ import java.io.BufferedReader;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Nick on 22/01/2015.
  */
-public class StreamingPlainTextAnalyzer extends AbstractStreamingAnalyzer implements MessageAnalyser {
+public class StreamingPlainTextAnalyzer extends AbstractStreamingAnalyzer implements MessageAnalyzer {
 
     private Supplier<BufferedReader> readerSupplier;
 

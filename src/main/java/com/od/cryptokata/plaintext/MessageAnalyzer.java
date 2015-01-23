@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Created by Nick on 22/01/2015.
  */
-public interface MessageAnalyser {
+public interface MessageAnalyzer {
 
     long countLinesContainingWord(String searchWord);
 

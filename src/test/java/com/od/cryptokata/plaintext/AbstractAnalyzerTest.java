@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 public abstract class AbstractAnalyzerTest {
 
-    private MessageAnalyser messageAnalyser;
+    private MessageAnalyzer messageAnalyser;
 
     @Before
     public void setUp() throws FileNotFoundException {
@@ -70,7 +70,7 @@ public abstract class AbstractAnalyzerTest {
     /**
      * Subclass implement to supply the MessageAnalyzer we are testing
      */
-    protected abstract MessageAnalyser createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException;
+    protected abstract MessageAnalyzer createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException;
 
 
 }

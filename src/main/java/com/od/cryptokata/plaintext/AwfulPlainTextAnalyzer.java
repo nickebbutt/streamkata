@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * A very bad MessageAnalyzer written with Jdk 1.7 -
  * don't copy this
  */
-public class AwfulPlainTextAnalyzer implements MessageAnalyser {
+public class AwfulPlainTextAnalyzer implements MessageAnalyzer {
 
     private Supplier<BufferedReader> readerSupplier;
 

@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 public class AwfulPlainTextAnalyzerTest extends AbstractAnalyzerTest {
 
     @Override
-    protected MessageAnalyser createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException {
+    protected MessageAnalyzer createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException {
         return new AwfulPlainTextAnalyzer(readerSupplier);
     }
 }

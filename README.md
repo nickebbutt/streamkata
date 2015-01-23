@@ -22,7 +22,7 @@ These can be used to count words and find phrases, in a plain text file or an en
 Two working but awful implementations are provided, along with tests - these monstrosities employ outmoded java 5 constructs (in keeping with the 19th century theme). They take much longer to run than they should. Perhaps the developer was recovering from a Christmas party at the time.
 
 Your mission is to complete the Stream-based implementations for MessageAnalyser and DecryptingAnalyser, using as much cool stuff from JDK 8 as you feel you can justify.  
-These should be a lot prettier and run faster. 
+
 
 
 

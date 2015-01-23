@@ -26,11 +26,21 @@ public class StreamingDecryptingAnalyzer extends AbstractStreamingAnalyzer imple
     }
 
     public Set<String> findMatches(String knownPlaintext, int matchCount) {
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        try ( Stream<String> lines = cipherTextSupplier.get().lines() ) {
+            return lines.flatMap(streamOfDecryptedValues()).filter(
+                    contains(knownPlaintext)).limit(matchCount).collect(Collectors.toSet());
+        }
     }
 
-
     public Set<String> findAllMatches(String knownPlaintext) {
-        throw new UnsupportedOperationException("Not Implemented Yet");
+        try ( Stream<String> lines = cipherTextSupplier.get().lines() ) {
+            return lines.parallel().flatMap(streamOfDecryptedValues()).filter(
+                    contains(knownPlaintext)).collect(Collectors.toSet());
+        }
+    }
+
+    private Function<String, Stream<? extends String>> streamOfDecryptedValues() {
+        return s -> keys.stream().map(
+                k -> substitutionCipher.decrypt(s, k));
     }
 }

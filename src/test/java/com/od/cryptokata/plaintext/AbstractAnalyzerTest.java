@@ -38,7 +38,7 @@ public abstract class AbstractAnalyzerTest {
     }
 
     @Test
-    public void testGetMatches() throws Exception {
+    public void testFindAllMatches() throws Exception {
         runWithTiming(getClass().getSimpleName() + " findAllMatches", () -> {
 
             List<String> patterns = Arrays.asList(
@@ -50,11 +50,11 @@ public abstract class AbstractAnalyzerTest {
             assertEquals(3, results.size());
             results.forEach(Matching.matchesAtLeastOne(patterns));
         });
-
     }
 
+
     @Test
-    public void testGetNMatches() throws Exception {
+    public void testFindMatches() throws Exception {
         runWithTiming(getClass().getSimpleName() + " findMatches", () -> {
             List<String> patterns = Arrays.asList(
                     "Zat, my dear sir.*",
@@ -65,7 +65,6 @@ public abstract class AbstractAnalyzerTest {
             results.forEach(Matching.matchesAtLeastOne(patterns));
         });
     }
-
 
     /**
      * Subclass implement to supply the MessageAnalyzer we are testing

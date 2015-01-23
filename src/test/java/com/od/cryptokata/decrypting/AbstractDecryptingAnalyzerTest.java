@@ -26,7 +26,7 @@ public abstract class AbstractDecryptingAnalyzerTest {
     }
 
     @Test
-    public void testGetNMatches() throws Exception {
+    public void testFindMatches() throws Exception {
         runWithTiming(getClass().getSimpleName() + " findMatches ", () -> {
             Set<String> results = messageAnalyser.findMatches("Napoleon", 4);
             assertEquals(4, results.size());
@@ -34,7 +34,7 @@ public abstract class AbstractDecryptingAnalyzerTest {
     }
 
     @Test
-    public void testGetAllMatches() throws Exception {
+    public void testFindAllMatches() throws Exception {
         runWithTiming(getClass().getSimpleName() + " findAllMatches ", () -> {
             Set<String> results = messageAnalyser.findAllMatches("Napoleon");
             assertEquals(582, results.size());

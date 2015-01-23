@@ -13,24 +13,13 @@ import java.util.function.ObjIntConsumer;
  * For goodness sake don't use this for anything which actually needs to be secure....
  *
  */
-public class SubstitutionCipher {
+public class SubstitutionCipher implements Cipher {
 
     private final KeyValidator keyValidator = new KeyValidator();
     private ThreadLocalKeyMaps threadLocalKeyMaps = new ThreadLocalKeyMaps();
 
-    private static BiFunction<Integer, Map<Integer,Integer>, Integer> mappingFunction = (c ,m ) -> {
-        Integer mapped = m.get(c);
-        //if a mapped character, replace it
-        return mapped == null ? c : mapped;
-    };
-
-    //collect streaming ints into a StringBuilder as characters
-    private static ObjIntConsumer<StringBuilder> charAccumulator = (sb, i) -> {
-        sb.append((char) i);
-    };
-
     /**
-     * Perform an entirely trivial decryption using key
+     * Perform an entirely trivial encryption using key
      * Don't use this in real life
      */
     public String encrypt(String s, String key) {
@@ -86,5 +75,15 @@ public class SubstitutionCipher {
         return decoding;
     }
 
+    private static BiFunction<Integer, Map<Integer,Integer>, Integer> mappingFunction = (c ,m ) -> {
+        Integer mapped = m.get(c);
+        //if a mapped character, replace it
+        return mapped == null ? c : mapped;
+    };
+
+    //collect streaming ints into a StringBuilder as characters
+    private static ObjIntConsumer<StringBuilder> charAccumulator = (sb, i) -> {
+        sb.append((char) i);
+    };
 
 }

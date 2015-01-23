@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public class StreamingPlainTextAnalyzerTest extends AbstractAnalyzerTest {
 
     @Override
-    protected MessageAnalyser createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException {
+    protected MessageAnalyzer createAnalyzer(Supplier<BufferedReader> readerSupplier) throws FileNotFoundException {
         return new StreamingPlainTextAnalyzer(readerSupplier);
     }
 }

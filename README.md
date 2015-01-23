@@ -4,9 +4,9 @@ A code kata to practise Java 8 functional programming with streams
 
 ### Preamble, not at all contrived ###
 
-While stowing your White Tuxedo/Black Cocktail Dress after a well-lubricated Christmas party you fall into a wardrobe and wake up in an alternate reality. You aren't in Narnia. It's late September 1812, and it's freezing. You're holed up in a leaking Muscovite garret, and the city is about to be crushed by Napolean's inexorable advance. 
+While stowing your White Tuxedo/Black Cocktail Dress after a well-lubricated Christmas party you fall into your wardrobe (it could happen to anybody) and wake up in an alternate reality. It's late September 1812, and it's freezing. You're holed up in a leaking Muscovite garret, and the city is about to be crushed by Napolean's advance.
 
-Luckily someone left you a cache of cipher keys and some intercepted communications from the Grande Armée. If only you'd brought your Macbook Pro with you, you'd be able to use them to decrypt Napoleon's secret communications, and perhaps turn the tide of the war...
+Luckily someone left you a cache of cipher keys and some intercepted communications from the Grande Armée. If only you'd brought your Macbook Pro with you, you'd be able to decrypt Napoleon's secret communications, and perhaps turn the tide of the war...
 
 ### Your mission ###
 

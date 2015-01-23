@@ -26,11 +26,13 @@ public class StreamingPlainTextAnalyzer extends AbstractStreamingAnalyzer implem
 
     @Override
     public Set<String> findAllMatches(List<String> patterns) {
+        // Stream<String> lines = readerSupplier.get().lines()
         throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
     @Override
     public Set<String> findMatches(int matchCount, List<String> patterns) {
+        // Stream<String> lines = readerSupplier.get().lines()
         throw new UnsupportedOperationException("Not Implemented Yet");
     }
 

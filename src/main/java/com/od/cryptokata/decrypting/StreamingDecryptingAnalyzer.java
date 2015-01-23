@@ -1,6 +1,7 @@
 package com.od.cryptokata.decrypting;
 
 import com.od.cryptokata.util.AbstractStreamingAnalyzer;
+import com.od.cryptokata.util.Cipher;
 import com.od.cryptokata.util.SubstitutionCipher;
 
 import java.io.BufferedReader;
@@ -18,7 +19,7 @@ public class StreamingDecryptingAnalyzer extends AbstractStreamingAnalyzer imple
 
     private final Supplier<BufferedReader> cipherTextSupplier;
     private final List<String> keys;
-    private final SubstitutionCipher substitutionCipher = new SubstitutionCipher();
+    private final Cipher cipher = new SubstitutionCipher();
 
     public StreamingDecryptingAnalyzer(Supplier<BufferedReader> cipherTextSupplier, List<String> keys) {
         this.cipherTextSupplier = cipherTextSupplier;
@@ -26,11 +27,13 @@ public class StreamingDecryptingAnalyzer extends AbstractStreamingAnalyzer imple
     }
 
     public Set<String> findMatches(String knownPlaintext, int matchCount) {
+        // Stream<String> lines = readerSupplier.get().lines()
         throw new UnsupportedOperationException("Not Implemented Yet");
     }
 
 
     public Set<String> findAllMatches(String knownPlaintext) {
+        // Stream<String> lines = readerSupplier.get().lines()
         throw new UnsupportedOperationException("Not Implemented Yet");
     }
 }

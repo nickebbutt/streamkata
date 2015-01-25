@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 /**
  * Created by Nick on 22/01/2015.
  */
-public class StreamingPlainTextAnalyzer implements MessageAnalyzer {
+public class StreamingMessageAnalyzer implements MessageAnalyzer {
 
     // Stream<String> lines = plainTextSupplier.get().lines()
 

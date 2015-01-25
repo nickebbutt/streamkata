@@ -14,7 +14,7 @@ import java.util.function.Supplier;
  * A bad MessageAnalyzer written with Jdk 1.5 language constructs -
  * don't copy this
  */
-public class AwfulPlainTextAnalyzer implements MessageAnalyzer {
+public class AwfulMessageAnalyzer implements MessageAnalyzer {
 
 
     @Override

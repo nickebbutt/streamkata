@@ -1,6 +1,5 @@
 package com.od.cryptokata.decrypting;
 
-import com.od.cryptokata.util.AbstractStreamingAnalyzer;
 import com.od.cryptokata.util.Cipher;
 import com.od.cryptokata.util.SubstitutionCipher;
 
@@ -15,29 +14,27 @@ import java.util.stream.Stream;
 /**
  * Created by nick on 23/01/15.
  */
-public class StreamingDecryptingAnalyzer extends AbstractStreamingAnalyzer implements DecryptingAnalyzer {
+public class StreamingDecryptingAnalyzer implements DecryptingAnalyzer {
 
-    private final Supplier<BufferedReader> cipherTextSupplier;
     private final List<String> keys;
     private final Cipher substitutionCipher = new SubstitutionCipher();
 
-    public StreamingDecryptingAnalyzer(Supplier<BufferedReader> cipherTextSupplier, List<String> keys) {
-        this.cipherTextSupplier = cipherTextSupplier;
+    public StreamingDecryptingAnalyzer(List<String> keys) {
         this.keys = keys;
     }
 
-    public Set<String> findMatches(String knownPlaintext, int matchCount) {
+    public Set<String> findSomeLinesContaining(Supplier<BufferedReader> cipherTextSupplier, int numberToFind, String searchTerm) {
         try ( Stream<String> lines = cipherTextSupplier.get().lines() ) {
             return lines.flatMap(streamOfDecryptedValues()).filter(
-                contains(knownPlaintext)).limit(matchCount).collect(Collectors.toSet()
+                    s -> s.contains(searchTerm)).limit(numberToFind).collect(Collectors.toSet()
             );
         }
     }
 
-    public Set<String> findAllMatches(String knownPlaintext) {
+    public Set<String> findAllLinesContaining(Supplier<BufferedReader> cipherTextSupplier, String searchTerm) {
         try ( Stream<String> lines = cipherTextSupplier.get().lines() ) {
             return lines.parallel().flatMap(streamOfDecryptedValues()).filter(
-                contains(knownPlaintext)).collect(Collectors.toSet()
+                    s -> s.contains(searchTerm)).collect(Collectors.toSet()
             );
         }
     }

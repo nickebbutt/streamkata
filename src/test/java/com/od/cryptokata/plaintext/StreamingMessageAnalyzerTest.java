@@ -2,10 +2,13 @@ package com.od.cryptokata.plaintext;
 
 import java.io.FileNotFoundException;
 
-public class AwfulPlainTextAnalyzerTest extends AbstractAnalyzerTest {
+/**
+ * Created by Nick on 22/01/2015.
+ */
+public class StreamingMessageAnalyzerTest extends AbstractAnalyzerTest {
 
     @Override
     protected MessageAnalyzer createAnalyzer() throws FileNotFoundException {
-        return new AwfulPlainTextAnalyzer();
+        return new StreamingMessageAnalyzer();
     }
 }

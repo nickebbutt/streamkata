@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 /**
  * Created by Nick on 22/01/2015.
  */
-public class StreamingPlainTextAnalyzer implements MessageAnalyzer {
+public class StreamingMessageAnalyzer implements MessageAnalyzer {
 
     @Override
     public long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {

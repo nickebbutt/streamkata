@@ -1,6 +1,6 @@
 package com.od.cryptokata.decrypting;
 
-import com.od.cryptokata.plaintext.AwfulPlainTextAnalyzer;
+import com.od.cryptokata.plaintext.AwfulMessageAnalyzer;
 import com.od.cryptokata.util.DecryptingReader;
 
 import java.io.BufferedReader;
@@ -31,7 +31,7 @@ public class AwfulDecryptingAnalyzer implements DecryptingAnalyzer {
 
             int remainingToFind = matchCount - matches.size();
 
-            AwfulPlainTextAnalyzer plainAnalyzer = new AwfulPlainTextAnalyzer();
+            AwfulMessageAnalyzer plainAnalyzer = new AwfulMessageAnalyzer();
             matches.addAll(plainAnalyzer.findSomeLinesContaining(s, remainingToFind, searchTerm));
 
             if ( matches.size() >= matchCount) {

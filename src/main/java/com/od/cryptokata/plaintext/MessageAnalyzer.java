@@ -10,7 +10,7 @@ import java.util.function.Supplier;
  */
 public interface MessageAnalyzer {
 
-    long countLinesContainingWord(Supplier<BufferedReader> plainTextSupplier, String searchTerm);
+    long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm);
 
     Set<String> findAllLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm);
 

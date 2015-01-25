@@ -25,7 +25,7 @@ public abstract class AbstractAnalyzerTest {
     @Test
     public void testCountLinesContaining() throws Exception {
         runWithTiming(getClass().getSimpleName() + " countLinesContaining", () -> {
-            assertEquals(100, messageAnalyser.countLinesContainingWord(getPlainTextReader(), "cannon")
+            assertEquals(100, messageAnalyser.countLinesContaining(getPlainTextReader(), "cannon")
             );
         });
     }

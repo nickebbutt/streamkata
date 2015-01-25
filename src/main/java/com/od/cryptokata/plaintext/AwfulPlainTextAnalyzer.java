@@ -18,7 +18,7 @@ public class AwfulPlainTextAnalyzer implements MessageAnalyzer {
 
 
     @Override
-    public long countLinesContainingWord(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
+    public long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
         List<String> plainText = readMessage(plainTextSupplier);
         int count = 0;
         for ( String s : plainText) {

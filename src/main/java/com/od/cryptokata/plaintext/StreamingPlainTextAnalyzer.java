@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class StreamingPlainTextAnalyzer implements MessageAnalyzer {
 
     @Override
-    public long countLinesContainingWord(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
+    public long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
         try ( Stream<String> lines = plainTextSupplier.get().lines() ) {
             return lines.filter(s -> s.contains(searchTerm)).count();
         }

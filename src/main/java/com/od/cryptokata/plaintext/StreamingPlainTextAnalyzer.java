@@ -1,39 +1,30 @@
 package com.od.cryptokata.plaintext;
 
-import com.od.cryptokata.util.AbstractStreamingAnalyzer;
 
 import java.io.BufferedReader;
-import java.util.List;
+import java.util.Collections;
 import java.util.Set;
 import java.util.function.Supplier;
 
 /**
  * Created by Nick on 22/01/2015.
  */
-public class StreamingPlainTextAnalyzer extends AbstractStreamingAnalyzer implements MessageAnalyzer {
+public class StreamingPlainTextAnalyzer implements MessageAnalyzer {
 
-    private Supplier<BufferedReader> readerSupplier;
+    // Stream<String> lines = plainTextSupplier.get().lines()
 
-    public StreamingPlainTextAnalyzer(Supplier<BufferedReader> readerSupplier) {
-        this.readerSupplier = readerSupplier;
+    @Override
+    public long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
+        return 0; // TODO - Fix me
     }
 
     @Override
-    public long countLinesContainingWord(String searchWord) {
-        // Stream<String> lines = readerSupplier.get().lines()
-        throw new UnsupportedOperationException("Not Implemented Yet");
+    public Set<String> findAllLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
+        return Collections.emptySet();  // TODO - Fix me
     }
 
     @Override
-    public Set<String> findAllMatches(List<String> patterns) {
-        // Stream<String> lines = readerSupplier.get().lines()
-        throw new UnsupportedOperationException("Not Implemented Yet");
+    public Set<String> findSomeLinesContaining(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm) {
+        return Collections.emptySet();   // TODO - Fix me
     }
-
-    @Override
-    public Set<String> findMatches(int matchCount, List<String> patterns) {
-        // Stream<String> lines = readerSupplier.get().lines()
-        throw new UnsupportedOperationException("Not Implemented Yet");
-    }
-
 }

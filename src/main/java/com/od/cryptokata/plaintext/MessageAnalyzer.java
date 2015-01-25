@@ -1,18 +1,19 @@
 package com.od.cryptokata.plaintext;
 
 
-import java.util.List;
+import java.io.BufferedReader;
 import java.util.Set;
+import java.util.function.Supplier;
 
 /**
  * Created by Nick on 22/01/2015.
  */
 public interface MessageAnalyzer {
 
-    long countLinesContainingWord(String searchWord);
+    long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm);
 
-    Set<String> findAllMatches(List<String> patterns);
+    Set<String> findAllLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm);
 
-    Set<String> findMatches(int matchCount, List<String> patterns);
+    Set<String> findSomeLinesContaining(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm);
 
 }

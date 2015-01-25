@@ -4,10 +4,7 @@ import com.od.cryptokata.plaintext.AwfulPlainTextAnalyzer;
 import com.od.cryptokata.util.DecryptingReader;
 
 import java.io.BufferedReader;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Supplier;
 
 /**
@@ -15,25 +12,28 @@ import java.util.function.Supplier;
  */
 public class AwfulDecryptingAnalyzer implements DecryptingAnalyzer {
 
-    private Supplier<BufferedReader> cipherTextSupplier;
     private List<String> keys;
 
-    public AwfulDecryptingAnalyzer(Supplier<BufferedReader> cipherTextSupplier, List<String> keys) {
-        this.cipherTextSupplier = cipherTextSupplier;
+    public AwfulDecryptingAnalyzer(List<String> keys) {
         this.keys = keys;
     }
 
     @Override
-    public Set<String> findMatches(String knownPlaintext, int matchCount) {
-        Set<String> matches = new HashSet<>();
-        for ( String key : keys) {
-            AwfulPlainTextAnalyzer plainTextAnalyzer = new AwfulPlainTextAnalyzer(new Supplier<BufferedReader>() {
-                public BufferedReader get() {
-                    return new DecryptingReader(cipherTextSupplier.get(), key);
-                }
-            });
+    public Set<String> findSomeLinesContaining(Supplier<BufferedReader> cipherTextSupplier, int numberToFind, String searchTerm) {
+        List<Supplier<BufferedReader>> decryptingReaders = getDecryptingReaders(cipherTextSupplier);
+        LinkedList<String> matches = getMatches(numberToFind, searchTerm, decryptingReaders);
+        return new HashSet<>(matches);
+    }
 
-            matches.addAll(plainTextAnalyzer.findMatches(matchCount - matches.size(), Collections.singletonList(knownPlaintext)));
+    private LinkedList<String> getMatches(int matchCount, String searchTerm, List<Supplier<BufferedReader>> decryptingReaders) {
+        LinkedList<String> matches = new LinkedList<>();
+        for ( Supplier<BufferedReader> s : decryptingReaders) {
+
+            int remainingToFind = matchCount - matches.size();
+
+            AwfulPlainTextAnalyzer plainAnalyzer = new AwfulPlainTextAnalyzer();
+            matches.addAll(plainAnalyzer.findSomeLinesContaining(s, remainingToFind, searchTerm));
+
             if ( matches.size() >= matchCount) {
                 break;
             }
@@ -41,9 +41,18 @@ public class AwfulDecryptingAnalyzer implements DecryptingAnalyzer {
         return matches;
     }
 
+    //We don't know which is the correct key so try decrypting with each in turn
+    private List<Supplier<BufferedReader>> getDecryptingReaders(Supplier<BufferedReader> cipherTextSupplier) {
+        List<Supplier<BufferedReader>> decryptingReaders = new ArrayList<>();
+        for ( String key : keys) {
+            decryptingReaders.add( () -> new DecryptingReader(cipherTextSupplier.get(), key));
+        }
+        return decryptingReaders;
+    }
+
     @Override
-    public Set<String> findAllMatches(String knownPlaintext) {
-        return findMatches(knownPlaintext, Integer.MAX_VALUE);
+    public Set<String> findAllLinesContaining(Supplier<BufferedReader> cipherTextSupplier, String searchTerm) {
+        return findSomeLinesContaining(cipherTextSupplier, Integer.MAX_VALUE, searchTerm);
     }
 
 }

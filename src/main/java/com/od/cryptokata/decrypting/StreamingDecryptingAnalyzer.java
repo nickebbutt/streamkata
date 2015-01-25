@@ -1,39 +1,33 @@
 package com.od.cryptokata.decrypting;
 
-import com.od.cryptokata.util.AbstractStreamingAnalyzer;
 import com.od.cryptokata.util.Cipher;
 import com.od.cryptokata.util.SubstitutionCipher;
 
 import java.io.BufferedReader;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by nick on 23/01/15.
  */
-public class StreamingDecryptingAnalyzer extends AbstractStreamingAnalyzer implements DecryptingAnalyzer {
+public class StreamingDecryptingAnalyzer implements DecryptingAnalyzer {
 
-    private final Supplier<BufferedReader> cipherTextSupplier;
     private final List<String> keys;
     private final Cipher cipher = new SubstitutionCipher();
 
-    public StreamingDecryptingAnalyzer(Supplier<BufferedReader> cipherTextSupplier, List<String> keys) {
-        this.cipherTextSupplier = cipherTextSupplier;
+    public StreamingDecryptingAnalyzer(List<String> keys) {
         this.keys = keys;
     }
 
-    public Set<String> findMatches(String knownPlaintext, int matchCount) {
-        // Stream<String> lines = readerSupplier.get().lines()
-        throw new UnsupportedOperationException("Not Implemented Yet");
+    @Override
+    public Set<String> findAllLinesContaining(Supplier<BufferedReader> cipherTextSupplier, String searchTerm) {
+        return Collections.emptySet();  //TODO - fix me
     }
 
-
-    public Set<String> findAllMatches(String knownPlaintext) {
-        // Stream<String> lines = readerSupplier.get().lines()
-        throw new UnsupportedOperationException("Not Implemented Yet");
+    @Override
+    public Set<String> findSomeLinesContaining(Supplier<BufferedReader> cipherTextSupplier, int numberToFind, String searchTerm) {
+        return Collections.emptySet();  //TODO - fix me
     }
 }

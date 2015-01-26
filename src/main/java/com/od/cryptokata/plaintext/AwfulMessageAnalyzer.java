@@ -58,6 +58,26 @@ public class AwfulMessageAnalyzer implements MessageAnalyzer {
         return matchingLines;
     }
 
+    @Override
+    public Set<String> findSomeLinesCaseInsensitive(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm) {
+        List<String> plainText = readMessage(plainTextSupplier);
+        String searchTermUpperCase = searchTerm.toUpperCase();
+
+        Set<String> matchingLines = new HashSet<>();
+        int count = 0;
+        for (String s : plainText) {
+            String upperCase = s.toUpperCase();
+            if ( upperCase.contains(searchTermUpperCase)) {
+                matchingLines.add(upperCase);
+
+                if ( ++count == numberToFind) {
+                    break;
+                }
+            }
+        }
+        return matchingLines;
+    }
+
 
     public List<String> readMessage(Supplier<BufferedReader> supplier) {
         List<String> messageContents = new ArrayList<>();

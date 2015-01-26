@@ -32,4 +32,11 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
         }
     }
 
+    @Override
+    public Set<String> findSomeLinesCaseInsensitive(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm) {
+        try ( Stream<String> lines = plainTextSupplier.get().lines() ) {
+            return lines.map(String::toUpperCase).filter(s -> s.contains(searchTerm.toUpperCase())).limit(numberToFind).collect(Collectors.toSet());
+        }
+    }
+
 }

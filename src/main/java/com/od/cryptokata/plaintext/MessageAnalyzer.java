@@ -16,4 +16,9 @@ public interface MessageAnalyzer {
 
     Set<String> findSomeLinesContaining(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm);
 
+    /**
+     * @return Set<String> of results in upper case
+     */
+    Set<String> findSomeLinesCaseInsensitive(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm);
+
 }

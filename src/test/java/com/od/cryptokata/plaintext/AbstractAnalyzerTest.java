@@ -35,6 +35,7 @@ public abstract class AbstractAnalyzerTest {
         runWithTiming(getClass().getSimpleName() + " testFindAllLinesContaining", () -> {
             Set<String> results = messageAnalyser.findAllLinesContaining(getPlainTextReader(), "England");
             assertEquals(15, results.size());
+            //results.forEach(System.out::println);
         });
     }
 
@@ -43,6 +44,14 @@ public abstract class AbstractAnalyzerTest {
         runWithTiming(getClass().getSimpleName() + " testFindSomeLinesContaining", () -> {
             Set<String> results = messageAnalyser.findSomeLinesContaining(getPlainTextReader(), 4, "Napoleon");
             assertEquals(4, results.size());
+        });
+    }
+
+    @Test
+    public void testFindSomeLinesCaseInsensitive() throws Exception {
+        runWithTiming(getClass().getSimpleName() + " testFindSomeLinesCaseInsensitive", () -> {
+            Set<String> results = messageAnalyser.findSomeLinesCaseInsensitive(getPlainTextReader(), 100, "wine");
+            assertEquals(57, results.size());
         });
     }
 

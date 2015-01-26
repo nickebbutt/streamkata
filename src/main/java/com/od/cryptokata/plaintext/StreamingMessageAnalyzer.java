@@ -27,4 +27,9 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
     public Set<String> findSomeLinesContaining(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm) {
         return Collections.emptySet();   // TODO - Fix me
     }
+
+    @Override
+    public Set<String> findSomeLinesCaseInsensitive(Supplier<BufferedReader> plainTextSupplier, int numberToFind, String searchTerm) {
+        return Collections.emptySet();   // TODO - Fix me
+    }
 }

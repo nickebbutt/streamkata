@@ -23,6 +23,15 @@ public class StreamingDecryptingAnalyzer implements DecryptingAnalyzer {
 
     @Override
     public Set<String> findAllLinesContaining(Supplier<BufferedReader> cipherTextSupplier, String searchTerm) {
+
+        //We don't know which key will decrypt the cipher text
+
+        //Since we are using a simple substitution cipher, if we decrypt using the wrong key the operation will succeed but
+        //we may still end up with a cipher text result
+
+        //One possibility is to decrypt line by line trying all the keys we know
+        //Hint: can you use flatmap for this? How might we improve the search time?
+
         return Collections.emptySet();  //TODO - fix me
     }
 

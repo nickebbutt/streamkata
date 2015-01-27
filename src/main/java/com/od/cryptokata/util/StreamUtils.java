@@ -1,6 +1,7 @@
 package com.od.cryptokata.util;
 
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -14,4 +15,6 @@ public class StreamUtils {
            return processing.apply(lines);
         }
     }
+
+    public static Predicate<String> contains(String term) { return s -> s.contains(term); }
 }

@@ -1,7 +1,6 @@
 package com.od.cryptokata.decrypting;
 
 import com.od.cryptokata.util.Cipher;
-import com.od.cryptokata.util.StreamUtils;
 import com.od.cryptokata.util.SubstitutionCipher;
 
 import java.io.BufferedReader;
@@ -12,6 +11,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.od.cryptokata.util.StreamUtils.contains;
 import static com.od.cryptokata.util.StreamUtils.processAndClose;
 
 /**
@@ -32,7 +32,7 @@ public class StreamingDecryptingAnalyzer implements DecryptingAnalyzer {
                 return lines
                         .parallel()
                         .flatMap(streamOfDecryptedValues())
-                        .filter(s -> s.contains(searchTerm))
+                        .filter(contains(searchTerm))
                         .collect(Collectors.toSet());
             }
         );
@@ -43,7 +43,7 @@ public class StreamingDecryptingAnalyzer implements DecryptingAnalyzer {
             lines -> {
                 return lines
                         .flatMap(streamOfDecryptedValues())
-                        .filter(s -> s.contains(searchTerm))
+                        .filter(contains(searchTerm))
                         .limit(numberToFind)
                         .collect(Collectors.toSet());
             }

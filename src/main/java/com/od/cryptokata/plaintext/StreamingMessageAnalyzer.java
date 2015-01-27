@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import static com.od.cryptokata.util.StreamUtils.contains;
 import static com.od.cryptokata.util.StreamUtils.processAndClose;
 
 /**
@@ -18,7 +18,7 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
         return processAndClose(plainTextSupplier.get()::lines,
             lines -> {
                 return lines
-                        .filter(s -> s.contains(searchTerm))
+                        .filter(contains(searchTerm))
                         .count();
             });
     }
@@ -28,7 +28,7 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
         return processAndClose(plainTextSupplier.get()::lines,
             lines -> {
                 return lines
-                        .filter(s -> s.contains(searchTerm))
+                        .filter(contains(searchTerm))
                         .collect(Collectors.toSet());
             });
     }
@@ -38,7 +38,7 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
         return processAndClose(plainTextSupplier.get()::lines,
             lines -> {
                 return lines
-                        .filter(s -> s.contains(searchTerm))
+                        .filter(contains(searchTerm))
                         .limit(numberToFind)
                         .collect(Collectors.toSet());
             });
@@ -50,7 +50,7 @@ public class StreamingMessageAnalyzer implements MessageAnalyzer {
             lines -> {
                 return lines
                         .map(String::toUpperCase)
-                        .filter(s -> s.contains(searchTerm.toUpperCase()))
+                        .filter(contains(searchTerm.toUpperCase()))
                         .limit(numberToFind)
                         .collect(Collectors.toSet());
         });

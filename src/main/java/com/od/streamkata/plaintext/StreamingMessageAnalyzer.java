@@ -5,16 +5,18 @@ import java.io.BufferedReader;
 import java.util.Collections;
 import java.util.Set;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 /**
  * Created by Nick on 22/01/2015.
  */
 public class StreamingMessageAnalyzer implements MessageAnalyzer {
 
-    // Stream<String> lines = plainTextSupplier.get().lines()
+
 
     @Override
     public long countLinesContaining(Supplier<BufferedReader> plainTextSupplier, String searchTerm) {
+        //Stream<String> lines = plainTextSupplier.get().lines();
         return 0; // TODO - Fix me
     }
 

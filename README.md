@@ -12,17 +12,17 @@ The exercise is based around two interfaces:
 * MessageAnalyser
 * DecryptingAnalyser
 
-These can be used to find words and phrases in a plain text file or an encrypted file
+You need to implement these interfaces to find words and phrases in a plain text file or from an encrypted file
 
-Two working but awful implementations are provided, along with tests  
-The tests take longer to run than they should, you should be able to do better with streams.
+Two working but awful implementations are provided, along with working tests for the awful implementations  
+Complete the Stream based implementations to make the stream tests pass
+Start with the tests in com.od.streamkata.plaintext
 
-Your mission is to complete the Stream-based implementations, using as much cool stuff from JDK 8 as you feel you can justify.
+Use as much cool stuff from JDK 8 as you feel you can justify.
 
 * Get familiar with Streams, Predicates, Map and FlatMap, Collectors
 * Try lambda expressions, method references and functions as instances of java.util.function.Function and its related classes
 * Use 'Try-With-Resources (from jdk 1.7)' to keep things tidy since Stream implements AutoCloseable
-* Have a look at the new 'default' methods on Iterator, and have a think about default methods in general.
 * How is the 'Spliterator' related to the Stream API?
 * To what extent will be benefit from parallelism in the streams used for this exercise?
 

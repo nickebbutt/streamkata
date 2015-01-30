@@ -1,6 +1,6 @@
 # streamkata
 
-A code kata to practise Java 8 functional programming with streams
+A code kata to practise Java 8 functional programming with streams  
 You need jdk1.8 to run it, and maven to build the project
 
 ### Your mission - Primary Objectives ###

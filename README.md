@@ -15,8 +15,9 @@ The exercise is based around two interfaces:
 You need to implement these interfaces to find words and phrases in a plain text file or from an encrypted file
 
 Two working but awful implementations are provided, along with working tests for the awful implementations  
-Complete the Stream based implementations to make the stream tests pass
-Start with the tests in com.od.streamkata.plaintext
+
+Complete the Stream based implementations to make the stream tests pass  
+Start with the tests in *com.od.streamkata.plaintext*
 
 Use as much cool stuff from JDK 8 as you feel you can justify.
 

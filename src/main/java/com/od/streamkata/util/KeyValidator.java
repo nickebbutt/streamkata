@@ -1,4 +1,4 @@
-package com.od.cryptokata.util;
+package com.od.streamkata.util;
 
 import java.util.HashSet;
 import java.util.Set;

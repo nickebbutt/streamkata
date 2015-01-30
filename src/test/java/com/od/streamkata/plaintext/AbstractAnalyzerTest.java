@@ -1,4 +1,4 @@
-package com.od.cryptokata.plaintext;
+package com.od.streamkata.plaintext;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
-import static com.od.cryptokata.util.MessageReaders.getPlainTextReader;
-import static com.od.cryptokata.util.RunWithTiming.runWithTiming;
+import static com.od.streamkata.util.MessageReaders.getPlainTextReader;
+import static com.od.streamkata.util.RunWithTiming.runWithTiming;
 import static junit.framework.TestCase.assertEquals;
 
 /**

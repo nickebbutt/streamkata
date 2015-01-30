@@ -1,4 +1,4 @@
-package com.od.cryptokata.plaintext;
+package com.od.streamkata.plaintext;
 
 import java.io.FileNotFoundException;
 

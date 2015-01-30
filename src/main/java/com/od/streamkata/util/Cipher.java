@@ -1,6 +1,4 @@
-package com.od.cryptokata.util;
-
-import java.util.Map;
+package com.od.streamkata.util;
 
 /**
  * Created by GA2EBBU on 23/01/2015.

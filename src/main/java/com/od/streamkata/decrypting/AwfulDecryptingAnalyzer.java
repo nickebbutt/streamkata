@@ -1,7 +1,7 @@
-package com.od.cryptokata.decrypting;
+package com.od.streamkata.decrypting;
 
-import com.od.cryptokata.plaintext.AwfulMessageAnalyzer;
-import com.od.cryptokata.util.DecryptingReader;
+import com.od.streamkata.plaintext.AwfulMessageAnalyzer;
+import com.od.streamkata.util.DecryptingReader;
 
 import java.io.BufferedReader;
 import java.util.*;

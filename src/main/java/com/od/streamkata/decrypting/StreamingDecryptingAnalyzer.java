@@ -1,7 +1,7 @@
-package com.od.cryptokata.decrypting;
+package com.od.streamkata.decrypting;
 
-import com.od.cryptokata.util.Cipher;
-import com.od.cryptokata.util.SubstitutionCipher;
+import com.od.streamkata.util.Cipher;
+import com.od.streamkata.util.SubstitutionCipher;
 
 import java.io.BufferedReader;
 import java.util.Collections;

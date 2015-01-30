@@ -1,7 +1,7 @@
-package com.od.cryptokata.decrypting;
+package com.od.streamkata.decrypting;
 
-import com.od.cryptokata.util.Cipher;
-import com.od.cryptokata.util.SubstitutionCipher;
+import com.od.streamkata.util.Cipher;
+import com.od.streamkata.util.SubstitutionCipher;
 
 import java.io.BufferedReader;
 import java.util.List;
@@ -11,8 +11,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.od.cryptokata.util.StreamUtils.contains;
-import static com.od.cryptokata.util.StreamUtils.processAndClose;
+import static com.od.streamkata.util.StreamUtils.contains;
+import static com.od.streamkata.util.StreamUtils.processAndClose;
 
 /**
  * Created by nick on 23/01/15.

@@ -1,4 +1,4 @@
-package com.od.cryptokata.util;
+package com.od.streamkata.util;
 
 /**
  * Created by nick on 23/01/15.

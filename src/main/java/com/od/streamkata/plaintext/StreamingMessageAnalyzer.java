@@ -1,12 +1,12 @@
-package com.od.cryptokata.plaintext;
+package com.od.streamkata.plaintext;
 
 import java.io.BufferedReader;
 import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import static com.od.cryptokata.util.StreamUtils.contains;
-import static com.od.cryptokata.util.StreamUtils.processAndClose;
+import static com.od.streamkata.util.StreamUtils.contains;
+import static com.od.streamkata.util.StreamUtils.processAndClose;
 
 /**
  * Created by Nick on 22/01/2015.

@@ -1,4 +1,4 @@
-package com.od.cryptokata.decrypting;
+package com.od.streamkata.decrypting;
 
         import java.io.BufferedReader;
         import java.util.Set;

@@ -1,4 +1,4 @@
-package com.od.cryptokata.util;
+package com.od.streamkata.util;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

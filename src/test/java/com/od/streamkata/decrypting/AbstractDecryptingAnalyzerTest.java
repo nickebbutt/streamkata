@@ -1,6 +1,6 @@
-package com.od.cryptokata.decrypting;
+package com.od.streamkata.decrypting;
 
-import com.od.cryptokata.util.MessageReaders;
+import com.od.streamkata.util.MessageReaders;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-import static com.od.cryptokata.util.RunWithTiming.runWithTiming;
+import static com.od.streamkata.util.RunWithTiming.runWithTiming;
 import static junit.framework.TestCase.assertEquals;
-import static com.od.cryptokata.util.MessageReaders.getCipherTextReader;
+import static com.od.streamkata.util.MessageReaders.getCipherTextReader;
 
 /**
  * Test for decrypting analyzers
